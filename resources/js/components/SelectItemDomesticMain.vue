@@ -18,13 +18,14 @@
             <tr>
              
                 <td>
-                    
+                     <transition name="fade">
                     <div v-if="select1">
-                    <div style='color: white;'>FROM</div>
+                    <div style='color: white; '>FROM</div>
                     <v-chip-group style='float: left;' v-model="select2"  active-class="teal white--text" >
                         <v-chip style='float: left;' v-for="(size, item) in ManufacturerData" :key="item" :value="size" small>  {{ size }} </v-chip>
                     </v-chip-group>
                 </div>
+                </transition>
                 </td>
             </tr>
     <!-- SELECT 2 end-->
@@ -32,24 +33,28 @@
     <!-- SELECT 3 -->
             <tr>
                 <td>
-                    <div v-if="select2">
+                    <transition name="fade">
+                    <div v-if="select2" >
                         <div style='color: white'>TO</div>
                     <v-chip-group style='float: left;' v-model="select3"  active-class="teal white--text" >
                         <v-chip style='float: left;' v-for="size in ModelData" :key="size" :value="size" small> {{ size }} </v-chip>
                     </v-chip-group>
                 </div>
+                    </transition>
                 </td>
             </tr>
     <!-- SELECT 3 end-->
     <!-- SELECT 4 -->
         <tr>
             <td> 
+                <transition name="fade">
                 <div v-if="select1 == 'CarTransport' && select3" class='animation'>
                 <div style='color: white'>PICK UP</div>
                 <v-chip-group style='float: left;' v-model="select4"  active-class="teal white--text" >
                     <v-chip style='float: left;' v-for="size in ProblemData" :key="size" :value="size" small> {{ size }} </v-chip>
                 </v-chip-group>    
                 </div>
+                </transition>
             </td>
         </tr>
     <!-- SELECT 4 end -->
@@ -57,18 +62,21 @@
         <tr>
          
             <td>
+                <transition name='fade'>
                 <div v-if="select1 == 'CarTransport' && select3" class='animation'>
                     <div style='color: white;'><i style='padding-left: 10px;margin-right: 10px;' class="fas fa-arrow-alt-circle-down"></i> DROP OFF</div>
                 <v-chip-group style='float: left;' v-model="select5"  active-class="teal white--text" >
                     <v-chip style='float: left;' v-for="size in ProblemData" :key="size" :value="size" small> {{ size }} </v-chip>
                 </v-chip-group>
                 </div>
+                </transition>
             </td>
         </tr>
 
     <!-- SELECT 6  -->
         <tr>
             <td>
+                <transition name='fade'>
                 <div v-if="select1 == 'CarTransport' && select3" class='animation'>
                 <div style='color:white;'>
                     <i style='padding-left: 10px;margin-right: 10px;' class="fas fa-boxes"></i> WITH POSESSIONS? 
@@ -77,36 +85,54 @@
                     <v-chip style='float: left;' v-for="size in PossessionData" :key="size" :value="size" small> {{ size }} </v-chip>
                 </v-chip-group>
                 </div>
+                </transition>
             </td>
         </tr>
         <tr>
-        
+            <transition name='fade'>
             <div v-if="select1 =='CarTransport' && select6" style='margin-top: 20px;claer: both;'>
                 <div style='font-size: 14px; color:white; clear: both; padding-left: 320px;'>
                     <v-btn text color='yellow'>PRICE: $950</v-btn>
                 </div>
             </div>
+            </transition>
         </tr>
+
     </table>
 
+        <transition name='fade'>
         <div v-if="select1 == 'SmallMoving' && select3" style='margin-top: 20px;'>
             <div style='color: white;'>Choose your items to deliver</div>
             <small-moving-main :from='select2' :to='select3'></small-moving-main>
         </div>
+        </transition>
 
+        <transition name='fade'>
         <div style='color: white' v-if="select1 =='Parcel' && select3">
             <select-table-air-adel-kor-main></select-table-air-adel-kor-main>
         </div>
+        </transition>
 
+        <transition name='fade'>
         <div style='color: white' v-if="select1 =='Pallet' && select3">
             <select-table-air-adel-kor-main></select-table-air-adel-kor-main>
         </div>
+        </transition>
     </div>
  </div>
 </template>
 
 
 <style lang="scss">
+
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
 
 @keyframes move{
     from {display: none}

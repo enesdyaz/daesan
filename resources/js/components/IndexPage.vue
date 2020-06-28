@@ -26,24 +26,63 @@
                     </div>
                 </div>
 
-                <v-container style='width: 1200px; margin-top: 60px; color:'>
-                    <v-card dark style='float: left;' class="main-left pt-100"  max-width="520" height='340' color='rgb(47,68,91, 0.6)'>
-                        <v-card-text>
-                        <br>
-                        <div id='line'></div>
-                        <br>
-                        <p class="display-2" style='color: white;'>
-                            Daesan Global Logitics
-                        </p>
-                        <br>
-                        <div class="display-1" style='color: white'>
-                            고객의 소중한 마음까지<br> 전달 하겠습니다.
-                        </div>
-                        </v-card-text>
-                    </v-card>
+                <v-container style='width: 1200px; margin-top: 60px;padding-left: 60px;'>
+                    <v-carousel style='float: left; width: 520px;' cycle  class="main-left pt-100"   height='340' :show-arrows="false" hide-delimiter-background hide-delimiters>
+                        <v-carousel-item> 
+                            <v-card dark style='float: left;width: 540px; height: 340px'  color='rgb(47,68,91, 0.6)'>
+                                <v-card-text>
+                                <br>
+                                <div id='line'></div>
+                                <br>
+                                <p class="display-2" style='color: white;'>
+                                    Daesan Global Logitics
+                                </p>
+                                <br>
+                                <div class="display-1" style='color: white'>
+                                    고객의 소중한 마음까지<br> 전달 하겠습니다.
+                                </div>
+                                </v-card-text>
+                            </v-card>
+                        </v-carousel-item>
+
+                        <v-carousel-item>
+                            <v-card dark style='float: left; width: 540px;'   height='340'  color='rgb(47,68,91, 0.6)'>
+                                <v-card-text>
+                                <br>
+                                <div id='line'></div>
+                                <br>
+                                <p class="display-2" style='color: white;'>
+                                    Tracking Service
+                                </p>
+                                <br>
+                                <div class="display-1" style='color: white'>
+                                    고객님의 소중한 상품에 대한<br> 실시간 배송정보를 <br>확인할수 있습니다.
+                                </div>
+                                </v-card-text>
+                            </v-card>
+                        </v-carousel-item>
+
+                        <v-carousel-item>
+                            <v-card dark style='float: left; width: 540px;'   height='340'  color='rgb(47,68,91, 0.6)'>
+                                <v-card-text>
+                                <br>
+                                <div id='line'></div>
+                                <br>
+                                <p class="display-2" style='color: white;'>
+                                    Quick Quotation
+                                </p>
+                                <br>
+                                <div class="display-1" style='color: white'>
+                                    실시간으로 원하시는 배송 가격을 <br>확인할 수 있습니다. 
+                                </div>
+                                </v-card-text>
+                            </v-card>
+                        </v-carousel-item>
+                    </v-carousel>
 
 
-                    <v-card style='float: left; width: 500px; background: rgb(47,68,91, 0.6); margin-left: 40px;'>
+                    <v-card id='quickmove' style='float: left; width: 500px; background: rgb(47,68,91, 0.6); margin-left: 40px;
+                      animation-name: quickmove; animation-duration: 4s;'>
                         <v-card-text>
                             <div style='color: white;padding: 10px;'>QUICK QUOTATION</div>
                             <div style='width: 460px; padding: 6px; border: 1px solid white; border-radius: 8px;'>
@@ -87,6 +126,7 @@ export default {
         background-image: url("../../image/bg-2.jpg");
         background-position: center;
         background-size: cover;
+    
         .header{
                 
                 .header-1{
@@ -146,6 +186,10 @@ export default {
     0%   {background-color:red; left:0px; top:0px;}
     55%  {background-color:blue; left:300px; top:0px;}
     100%  {background-color:red; left:0px; top:0px;}
+    }
+    @keyframes quickmove {
+    0%   {opacity: 0; left: 100px;}
+    55%  {opacity: 1; left: 0px;}
     }
   
 
