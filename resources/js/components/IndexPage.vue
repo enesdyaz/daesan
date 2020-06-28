@@ -86,7 +86,7 @@ export default {
         height: 100vh;
         background-image: url("../../image/bg-2.jpg");
         background-position: center;
-        background-size: auto;
+        background-size: cover;
         .header{
                 
                 .header-1{
