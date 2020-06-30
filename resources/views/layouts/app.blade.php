@@ -25,7 +25,8 @@
 </head>
 <body>
     <div id="app">
-        <index-page></index-page>
+        <booking-index></booking-index>
+        {{-- <index-page></index-page> --}}
     </div> <!-- end_app_div -->
 </body>
 </html>

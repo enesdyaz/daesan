@@ -63,6 +63,10 @@ Vue.component('select-table-air-kor-peradel', require('./components/SelectTable/
 
 
 
+Vue.component('booking-index', require('./components//time/BookingIndex').default);
+
+
+
 const app = new Vue({
     router,
     el: '#app',
